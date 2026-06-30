@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(touch /Users/arushibhatia/Desktop/AI201/ProvenanceMail/signals/__init__.py)",
+      "Bash(.venv/bin/python -)",
+      "Bash(.venv/bin/python -c ' *)",
+      "Bash(.venv/bin/flask run *)",
+      "Bash(curl -s -X POST http://127.0.0.1:5050/submit -H 'Content-Type: application/json' -d '{\"text\": \"I hope this email finds you well. Furthermore, please review the attached report.\", \"creator_id\": \"user_abc123\"}')",
+      "Bash(python3 -m json.tool)",
+      "Bash(kill %1)",
+      "Bash(lsof -ti:5000)",
+      "Bash(xargs kill -9)",
+      "Bash(curl -s -X POST http://localhost:5000/submit -H 'Content-Type: application/json' -d '{\"text\": \"The sun dipped below the horizon, painting the sky in hues of amber and rose. I sat on the porch, coffee in hand, watching the neighborhood slowly go quiet.\", \"creator_id\": \"test-user-1\"}')"
+    ],
+    "additionalDirectories": [
+      "/Users/arushibhatia/Desktop/AI201/ProvenanceMail/signals"
+    ]
+  }
+}
