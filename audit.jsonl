@@ -1,2 +1,4 @@
 {"content_id": "b3adcb1e-5396-41fb-bc11-1eb4c9ccb94c", "creator_id": "test-user-1", "timestamp": "2026-06-30T04:44:37.607Z", "attribution": "human_original", "confidence": 0.2, "llm_score": 0.2, "status": "classified"}
 {"content_id": "fe54618d-6809-4a0a-8d10-e94ecd5f0a85", "creator_id": "test-user-1", "timestamp": "2026-06-30T04:44:52.879Z", "attribution": "human_original", "confidence": 0.2, "llm_score": 0.2, "status": "classified"}
+{"content_id": "07caf8d5-be03-4f34-be14-f400c665b00e", "creator_id": "test-user-1", "timestamp": "2026-06-30T04:50:09.462Z", "attribution": "likely_ai", "confidence": 0.9375, "llm_score": 0.9, "contraction_score": 1.0, "status": "classified"}
+{"content_id": "e8ce244a-9430-44ac-bd9c-cbd48f027d96", "creator_id": "test-user-1", "timestamp": "2026-06-30T04:50:09.850Z", "attribution": "human_original", "confidence": 0.375, "llm_score": 0.0, "contraction_score": 1.0, "status": "classified"}

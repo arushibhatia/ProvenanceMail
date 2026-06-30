@@ -6,6 +6,7 @@ from flask import Flask, request, jsonify
 from dotenv import load_dotenv
 
 from signals.signal1_groq import score_semantic_tropes
+from signals.signal2_contraction import score_contraction_density
 
 load_dotenv()
 
@@ -77,9 +78,13 @@ def submit():
 
     llm_score = signal1["score"]
 
-    # Signals 2 & 3 are stubs until Milestone 4; confidence is Signal 1 only for now.
-    # Formula will become: (0.50 * s1) + (0.30 * s2) + (0.20 * s3)
-    confidence = round(llm_score, 4)
+    # --- Signal 2: Contraction Density ---
+    contraction_score = score_contraction_density(text)
+
+    # --- Signal 3: placeholder (Milestone 4) ---
+    # Full formula: (0.50 * s1) + (0.30 * s2) + (0.20 * s3)
+    # Normalized over live signal weights until Signal 3 lands.
+    confidence = round((0.50 * llm_score + 0.30 * contraction_score) / 0.80, 4)
 
     attribution, label = _classify(confidence)
 
@@ -90,6 +95,7 @@ def submit():
         "attribution": attribution,
         "confidence": confidence,
         "llm_score": llm_score,
+        "contraction_score": contraction_score,
         "status": "classified",
     })
 
@@ -101,7 +107,7 @@ def submit():
         "label": label,
         "signals": {
             "signal1": {"score": llm_score, "reasoning": signal1["reasoning"]},
-            "signal2": {"score": None},
+            "signal2": {"score": contraction_score},
             "signal3": {"score": None},
         },
     }), 200
